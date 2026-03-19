@@ -1,0 +1,46 @@
+.animalsManager .card {
+  width: 100%;
+}
+
+.espece {
+  font-size: 1.5em;
+}
+.animalName {
+  font-weight: bold;
+}
+
+.popupContent form.classique {
+  width: 80%;
+}
+
+.choixEspece {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 16px 8px;
+}
+.choixEspece .card {
+  width: auto;
+  padding: 16px;
+  margin-bottom: 0;
+  transition: box-shadow 0.15s;
+}
+.choixEspece .card:hover {
+  cursor: pointer;
+  box-shadow: var(--shadowHover);
+}
+.choixEspece .card.selected {
+  border-width: 2px;
+  padding: 15px;
+  border-color: var(--action);
+  background-color: var(--actionBg);
+  color: var(--action);
+  box-shadow: none;
+}
+
+.addAnimal .animalInfo {
+  display: flex;
+  flex-grow: 1;
+  gap: 16px;
+}

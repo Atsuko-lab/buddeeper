@@ -1,0 +1,19 @@
+.profileContainer {
+  display: flex;
+}
+
+.profileContainer .profileEditor {
+  flex: 2;
+}
+.profileContainer .animalsManager,
+.profileContainer .blankZone {
+  flex: 1;
+}
+
+.profileContainer .profileEditor form.classique {
+  width: 80%;
+}
+
+.profileContainer .animalsManager .card-container {
+  justify-content: center;
+}

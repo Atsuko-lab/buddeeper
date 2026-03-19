@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  height: calc(100vh - 140px); /* 120 pour le header, 20 pour ne pas coller le bas de page */
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.convHeader {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 0;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.message.received {
+  background-color: #eee;
+}
+.message.sended {
+  background-color: var(--actionBg);
+  align-self: flex-end;
+  text-align: right;
+}
+
+.sendMessageZone {
+  display: flex;
+  position: relative;
+}
+.sendMessageZone textarea {
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 0 0 8px 8px;
+}
+.sendMessageZone button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  font-size: 1.2em;
+  border-radius: 50px;
+  padding: 12px;
+  transform: translateY(-50%);
+}

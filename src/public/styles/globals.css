@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --actionBg: #aed1e3;
+  --action: #3e6f87;
+
+  --validateBg: #c4ebc4;
+  --validate: #4b914b;
+
+  --errorBg: #ebc4c4;
+  --error: #890000;
+
+  --shadow: 0 4px 8px #0000001a;
+  --shadowHover: 0 4px 8px #0000003a;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: "Knewave", system-ui;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+h2 {
+  font-family: "Knewave", system-ui;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+a {
+  /* color: #263873; */
+  text-decoration: underline;
+}
+
+hr {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #bfbfbf;
+  border-bottom: 0;
+  margin: 16px 0 32px 0;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-left: auto;
+  background-color: #ddd;
+  border: 2px dashed #616161;
+  color: #616161;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s;
+}
+button:hover {
+  cursor: pointer;
+  box-shadow: var(--shadowHover);
+}
+
+button.ok {
+  border: 2px dashed var(--validate);
+  background-color: var(--validateBg);
+  color: var(--validate);
+}
+button.action {
+  background-color: var(--actionBg);
+  border: 2px dashed var(--action);
+  color: var(--action);
+}
+button.icon {
+  padding: 8px;
+}
+button.icon.tiny {
+  padding: 4px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 40px;
+  background-color: #fff;
+}
+footer {
+  margin-top: 40px;
+}
+
+/* Style pour les formulaire à étape */
+.step {
+  position: relative;
+  opacity: 1;
+  left: 0;
+  transition: all 0.2s;
+}
+.step.cache {
+  opacity: 0;
+  left: -20px;
+}
+.step.precache {
+  opacity: 0;
+  left: 20px;
+}
+
+/* TODO: Transformer en button classique */
+.stepButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  margin-left: auto;
+  padding: 8px 16px;
+  gap: 8px;
+  background-color: rgba(144, 191, 216, 0.725);
+  border: 2px dashed rgb(62, 111, 135);
+  color: rgb(62, 111, 135);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s;
+}
+
+.stepButton:hover {
+  cursor: pointer;
+  box-shadow: var(--shadowHover);
+}
+
+.actionConnect {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.actionConnect span {
+  font-style: italic;
+}
+.actionConnect button {
+  margin-left: initial;
+}
+
+.tinyText {
+  font-size: 0.8em;
+}
+
+/*** Tooltip ***/
+.tooltip {
+  position: relative;
+  display: flex;
+}
+
+.tooltip .tooltipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--actionBg);
+  border: 2px solid;
+  color: var(--action);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tooltip .tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: var(--action) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  display: none !important;
+}

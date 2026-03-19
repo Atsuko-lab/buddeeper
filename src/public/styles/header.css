@@ -1,0 +1,40 @@
+header .headerTitle {
+  font-family: "Knewave", system-ui;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 16px;
+}
+
+header .link {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0 8px;
+  text-decoration: none;
+}
+
+header .linkText {
+  position: relative;
+  opacity: 0;
+  top: -12px;
+  transition: top 0.2s, opacity 0.1s;
+}
+
+header .linkIcon {
+  position: relative;
+  font-size: 1.5em;
+  top: 12px;
+  transition: top 0.2s;
+}
+
+header .link:hover .linkText {
+  opacity: 1;
+  top: 0;
+}
+header .link:hover .linkIcon {
+  top: 0;
+}

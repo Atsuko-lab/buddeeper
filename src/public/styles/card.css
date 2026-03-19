@@ -1,0 +1,108 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 23.5%;
+  box-shadow: var(--shadow);
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.card h3 a:not(:has(.icon)) {
+  position: relative;
+  color: var(--action);
+  text-decoration: none;
+}
+.card h3 a:not(:has(.icon))::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px dashedvar(--action);
+}
+.card h3 a:not(:has(.icon)):hover::after {
+  border-style: solid;
+}
+
+.card p {
+  color: #666;
+}
+
+.card .boutonsActions {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+  font-size: 1.8em;
+}
+
+.card .boutonsActions .action {
+  padding: 4px;
+  border-radius: 50px;
+  border: 2px solid;
+  transition: all 0.15s;
+}
+.card .boutonsActions .action.modifier {
+  border-color: rgb(137, 119, 0);
+  color: rgb(137, 119, 0);
+}
+.card .boutonsActions .action.modifier:hover {
+  background-color: rgb(137, 119, 0);
+  color: white;
+  cursor: pointer;
+}
+.card .boutonsActions .action.supprimer {
+  border-color: rgb(137, 0, 0);
+  color: rgb(137, 0, 0);
+}
+.card .boutonsActions .action.supprimer:hover {
+  background-color: rgb(137, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+/* Carte d'ajout */
+.card.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-weight: bold;
+  color: rgb(75, 145, 75);
+  background-color: rgba(161, 223, 161, 0.63);
+  border: 4px dashed rgb(75, 145, 75);
+  padding: 17px; /* Rééquilibrage du paddig car grosse border */
+}
+.card.add:hover {
+  cursor: pointer;
+  box-shadow: var(--shadowHover);
+  transition: box-shadow 0.2s;
+}
+.card.add .addIcon {
+  font-size: 2em;
+  transition: none;
+}
+
+.card.add:hover .addIcon {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}

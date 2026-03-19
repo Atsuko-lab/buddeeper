@@ -1,0 +1,139 @@
+form.classique {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+
+form.classique > div:not(:first-child) {
+  margin-top: 16px;
+}
+form.classique div label {
+  position: relative;
+  font-size: 0.9em;
+  padding-left: 8px;
+}
+form.classique div label span.right {
+  position: absolute;
+  right: 0;
+  font-style: italic;
+}
+
+form.classique div.textField {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+form.classique div input[type="text"],
+form.classique div input[type="number"],
+form.classique div input[type="password"],
+form.classique div input[type="tel"],
+form.classique div input[type="email"],
+form.classique div input[type="date"],
+form.classique div textarea,
+form.classique div select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+/* Gestion du chevron du select */
+form.classique div select {
+  appearance: none; /* Masque le style par défaut */
+  -webkit-appearance: none; /* Pour les navigateurs WebKit comme Chrome et Safari */
+  -moz-appearance: none; /* Pour Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+form.classique div.userTypeChoice {
+  display: flex;
+  gap: 20px;
+}
+form.classique div.checkboxField {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+form.classique div.checkboxField label {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #333;
+  font-size: 1em;
+  transition: font-size 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+form.classique div.checkboxField input[type="checkbox"] {
+  appearance: none;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  transition: border-color 0.1s, background-color 0.1s;
+}
+form.classique div.checkboxField label:hover,
+form.classique div.checkboxField input[type="checkbox"]:hover {
+  cursor: pointer;
+  font-size: 1.1em;
+}
+form.classique div.checkboxField input[type="checkbox"] + label {
+  color: #696969;
+}
+form.classique div.checkboxField input[type="checkbox"]:checked {
+  border-color: var(--action);
+  background-color: var(--actionBg);
+}
+form.classique div.checkboxField input[type="checkbox"]:checked + label {
+  color: var(--action);
+}
+
+form.classique .formError {
+  display: flex;
+  align-items: center;
+  background-color: var(--errorBg);
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid var(--error);
+  margin-top: 16px;
+  color: var(--error);
+  font-weight: bold;
+  font-style: italic;
+}
+form.classique .formError .icon {
+  font-size: 1.3em;
+}
+
+form.classique button[type="submit"] {
+  margin-top: 16px;
+}
+
+form.classique .buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* TODO: move vers un fichier login.css ? */
+form.classique .buttons .inscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.classique .buttons button[type="submit"] {
+  margin-top: 0;
+}

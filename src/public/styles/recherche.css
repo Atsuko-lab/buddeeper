@@ -1,0 +1,47 @@
+.searchBloc {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  padding: 16px 16px 16px 32px;
+  gap: 32px;
+  border-radius: 80px;
+  font-size: 1em;
+}
+
+.searchBloc .searchCriteria {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.searchBloc .searchCriteria:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -16px; /* Moitié de la valeur du gap */
+  width: 1px;
+  height: 100%;
+  background-color: #ccc; /* Couleur du séparateur */
+}
+
+.searchBloc label {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.searchBloc input {
+  font-size: 0.9em;
+  color: #555;
+}
+.searchBloc input:focus-visible {
+  outline: none;
+}
+
+.searchBloc button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2em;
+  background-color: #ddd;
+  padding: 8px 16px;
+  border-radius: 32px;
+}
